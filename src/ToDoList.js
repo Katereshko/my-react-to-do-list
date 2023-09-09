@@ -46,7 +46,7 @@ export class ToDoList extends Component{
 
   render(){
     return(
-      <form onSubmit = {this.onFormSubmit}> 
+      <form className="container" onSubmit = {this.onFormSubmit}> 
         <input type="text" placeholder="to do next" 
         value = {this.state.userInput}
         onChange = {(e) => {this.addNewTask(e.target.value)}}

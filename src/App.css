@@ -1,3 +1,54 @@
 .crossed{
   text-decoration: line-through;
+  text-decoration-color: #EC53B0;
+}
+
+body{
+  background-color: #4D2DB7;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  color: #fff;
+  font-size: 74px;
+  font-family: 'Titan One', cursive;
+  letter-spacing: 8px;
+  word-spacing: 28px;
+}
+
+button{
+  background-color: #EC53B0;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 30px;
+  font-family: 'Kosugi Maru', sans-serif;
+  font-size: 30px;
+}
+
+input{
+  margin-bottom: 50px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+ul{
+  font-family: 'Kosugi Maru', sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+li{
+  margin-bottom: 20px;
+}
+
+p, a{
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
 }
