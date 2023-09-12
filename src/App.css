@@ -1,6 +1,9 @@
 .crossed{
   text-decoration: line-through;
   text-decoration-color: #4D2DB7;
+  -webkit-text-decoration-line: line-through;
+  -webkit-text-decoration-color: #4D2DB7;
+  -webkit-text-decoration-thickness: 2px;
 }
 
 body{
