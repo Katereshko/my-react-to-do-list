@@ -46,7 +46,8 @@ export class ToDoList extends Component{
 
   render(){
     return(
-      <form className="container" onSubmit = {this.onFormSubmit}> 
+      <div className="form_wrapper">
+      <form onSubmit = {this.onFormSubmit}> 
         <input type="text" placeholder="to do next" 
         value = {this.state.userInput}
         onChange = {(e) => {this.addNewTask(e.target.value)}}
@@ -62,6 +63,7 @@ export class ToDoList extends Component{
           Delete
         </button>
       </form>
+      </div>
     )
   }
 }

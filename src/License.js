@@ -9,7 +9,7 @@ export class License extends Component{
 
   render(){
     return(
-      <div className="container"> 
+      <div className="container margin-top"> 
         <p className="link_picture">Picture from <a href="https://ru.freepik.com/free-vector/hand-drawn-flat-abstract-shape-collection_18006666.htm#query=vector%20figures&position=2&from_view=search&track=ais">Freepik</a></p>
       </div>
     )
