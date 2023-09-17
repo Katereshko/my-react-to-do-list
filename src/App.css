@@ -59,6 +59,7 @@ button{
   padding: 14px 30px;
   font-family: 'Kosugi Maru', sans-serif;
   font-size: 30px;
+  cursor: git;
 }
 
 input{
