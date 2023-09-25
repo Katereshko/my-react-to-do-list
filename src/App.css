@@ -154,3 +154,19 @@ p, a{
   top: 500px;
   left: 1320px;
 }
+
+@media all and (max-width: 1280px){
+  h1{
+    font-size: 44px;
+  }
+
+  .form_wrapper{
+    width: auto;
+  }
+}
+
+@media all and (max-width: 1375px){
+  h1{
+    font-size: 34px;
+  }
+}
