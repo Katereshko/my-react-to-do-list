@@ -5,7 +5,7 @@ My individual coding project.
 
 ## Installation
 
-You can open the project on Netlify: https://katereshko-react-to-do-list.netlify.app/
+You can open the project on Netlify: https://katereshko-react-to-do-list.netlify.app/  
 Or, in the project directory, you can run:  
 
 `npm start`  
