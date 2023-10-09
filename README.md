@@ -16,20 +16,28 @@ Runs the app in the development mode.\
 
 The public directory contains files that will be read by your browser while you're developing the app; the most important of these is index.html. React injects your code into this file so that your browser can run it. 
 
-'src' folder - contains all the following files and folders   
-'assets' folder - contains the main styles file App.css and the 'Pictures' folder (it contains all background pictures' files)  
-'components' folder - contains all React components  
+src directory - contains all the following files and folders  
+
+assets directory - contains the main styles file App.css and the 'Pictures' folder (it contains all background pictures' files)    
+App.css - main styles file
+Pictures directory - contains all pictures' files  
+
+components directory - contains all React components  
 App.js - the main component  
 Header.js - contains the main header  
 ToDoList.js - contains the todo list block itself with its logic
 License.js - contains the bottom where the pictures' license is mentioned  
-Pictures.js - contains the background images
+Pictures.js - contains the background images  
+
+## User side  
+
+In order to use the app, open it via Netlify using the link in the very beginning  
+To add a new item to the list, type the text in the input field and press Enter key / click the "Add" button  
+When the task is done, click on the relevant item, and it will be crossed (or click it again in order to withdrow the crossing).  
+When the todo list is not needed anymore, press the "Delete" button, and the list will be cleared.  
+Right after that you can use the toolm again and create a new todo list.  
+
+## Logic side  
 
 
-index.html - main html file - to play the game, open this file on browser window  
-Let's open src/index.js, because that's where the App component is being used. This file is the entry point for our app, and it initially looks like this
-
-style.css - main styling file
-favicon.ico - icon to be displayed on browser tab
-'eyes' folder - SVG files which create animation effect
 
