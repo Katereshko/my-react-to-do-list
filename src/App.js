@@ -1,8 +1,8 @@
-import './App.css';
-import { License } from './License';
-import { ToDoList } from './ToDoList';
-import { Header } from './Header';
-import { Pictures } from './Pictures';
+import './assets/App.css';
+import { License } from './components/License';
+import { ToDoList } from './components/ToDoList';
+import { Header } from './components/Header';
+import { Pictures } from './components/Pictures';
 
 function App() {
   return (

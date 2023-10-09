@@ -1,16 +1,16 @@
 import { Component } from "react";
-import Pic1 from './Pictures/Pic1.svg';
-import Pic2 from './Pictures/Pic2.svg';
-import Pic3 from './Pictures/Pic3.svg';
-import Pic4 from './Pictures/Pic4.svg';
-import Pic5 from './Pictures/Pic5.svg';
-import Pic6 from './Pictures/Pic6.svg';
-import Pic7 from './Pictures/Pic7.svg';
-import Pic8 from './Pictures/Pic8.svg';
-import Pic9 from './Pictures/Pic9.svg';
-import Pic10 from './Pictures/Pic10.svg';
-import Pic11 from './Pictures/Pic11.svg';
-import Pic12 from './Pictures/Pic12.svg';
+import Pic1 from '../assets/Pictures/Pic1.svg';
+import Pic2 from '../assets/Pictures/Pic2.svg';
+import Pic3 from '../assets/Pictures/Pic3.svg';
+import Pic4 from '../assets/Pictures/Pic4.svg';
+import Pic5 from '../assets/Pictures/Pic5.svg';
+import Pic6 from '../assets/Pictures/Pic6.svg';
+import Pic7 from '../assets/Pictures/Pic7.svg';
+import Pic8 from '../assets/Pictures/Pic8.svg';
+import Pic9 from '../assets/Pictures/Pic9.svg';
+import Pic10 from '../assets/Pictures/Pic10.svg';
+import Pic11 from '../assets/Pictures/Pic11.svg';
+import Pic12 from '../assets/Pictures/Pic12.svg';
 
 export class Pictures extends Component{
   constructor(){
