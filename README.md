@@ -44,16 +44,15 @@ Right after that you can use the tool again and create a new todo list.
 The main logic is described in the ToDoList.js file (ToDoList component).  
 
 A class component is created and the initial state is set: **userInput** and **toDoList** values are empty.  
-The render() function then renders HTML to the web page. The todo list is rendered as a <form> element, and the future todo items are going to be displayed as <li> elements of a <ul> list.   
+The render() function then renders HTML to the web page. The todo list is rendered as a <form> element, and the future todo list items are going to be displayed as <li> elements of a <ul> list.   
 
-When the user types anything in the input field, the _onChange_ event handler gets triggered, which leades to the call of **addNewTask()**. The **setState()** is called then and the **userInput** value changes to the value that is currently entered by the user. As the value attribute makes the input value equal to the current state's **userInput** value (this.state.userInput), it also becomes equal to the currently entered value.  
+When the user types anything in the input field, the _onChange_ event handler gets triggered, which leads to the call of **addNewTask()**. The **setState()** is called then and the **userInput** value changes to the value that is currently entered by the user. As the value attribute makes the input value equal to the current state's **userInput** value (this.state.userInput), it also becomes equal to the currently entered value.  
 
 When the "Add" button/Enter key is clicked, the _onClick_ event handler gets triggered, which leads to the call of **addItem()**.  
 It creates the **toDoArray** array, which is equal to the current state's **toDoList** array (and is initially empty).  
 The input's value is pushed to this new array, and the state is renewed using _setState()_ method. So the value of **toDoList** array gets equal to the latest value of **toDoArray* which contains the pushed input value already. Then the page is rendered with the new state and the new element of the array are shown on the page as one of the listed elements.  
 
 The _onSubmit()_ event handler attached to the form submission event comes into operation when the form is submitted, i.e. the user clicks Enter key or "Add" button, and the page is not being reloaded due to preventDefault() method.  
-
 
 
 export class ToDoList extends Component{
