@@ -7,7 +7,7 @@ Created using class components in order to receive a clearer understanding of cl
 
 ## Installation
 
-You can use the project on Netlify: https://katereshko-react-to-do-list.netlify.app/  
+You can use this project on Netlify: https://katereshko-react-to-do-list.netlify.app/  
 Or, in the project directory, you can run:  
 
 `npm start`  
@@ -41,12 +41,16 @@ Right after that you can use the tool again and create a new todo list.
 
 ## Logic side  
 
-The main logic is described in the ToDoList.js file (ToDoList component).  
+The main logic is described in the ToDoList.js file (ToDoList component).  ```````
+
+
+Мы можем скомбинировать оба подхода и сделать состояние React-компонента «единственным источником правды». Тогда React-компонент будет рендерить форму и контролировать её поведение в ответ на пользовательский ввод. Значение элемента формы input в этом случае будет контролировать React, а сам элемент будет называться «управляемый компонент».``````
+Мы установили атрибут value для поля ввода и теперь в нём всегда будет отображаться значение this.state.value. Состояние React-компонента стало «источником истины». А так как каждое нажатие клавиши вызывает handleChange, который обновляет состояние React-компонента, значение в поле будет обновляться по мере того, как пользователь печатает.
 
 A class component is created and the initial state is set: **userInput** and **toDoList** values are empty.  
-The render() function then renders HTML to the web page. The todo list is rendered as a <form> element, and the future todo list items are going to be displayed as <li> elements of a <ul> list.   
+The render() function renders HTML to the web page. The todo list is rendered as a <form> element, and the future todo list items are going to be displayed as <li> elements of a <ul> list. As the value attribute makes the input value equal to the current state's **userInput** value (this.state.userInput), it also becomes equal to the currently entered value.  
 
-When the user types anything in the input field, the _onChange_ event handler gets triggered, which leads to the call of **addNewTask()**. The **setState()** is called then and the **userInput** value changes to the value that is currently entered by the user. As the value attribute makes the input value equal to the current state's **userInput** value (this.state.userInput), it also becomes equal to the currently entered value.  
+When the user types anything in the input field, the _onChange_ event handler gets triggered, which leads to the call of **addNewText()**. The **setState()** is called then and the **userInput** value changes to the value that is currently entered by the user. 
 
 When the "Add" button/Enter key is clicked, the _onClick_ event handler gets triggered, which leads to the call of **addItem()**.  
 It creates the **toDoArray** array, which is equal to the current state's **toDoList** array (and is initially empty).  
@@ -105,7 +109,7 @@ export class ToDoList extends Component{
       <form onSubmit = {this.onFormSubmit}> 
         <input type="text" placeholder="to do next" 
         value = {this.state.userInput}
-        onChange = {(e) => {this.addNewTask(e.target.value)}}
+        onChange = {(e) => {this.addNewTask(e.target.value)}}//берет value  из input field, а оно прямо сейчас равно userInput
         />
         <button onClick={() => this.addItem(this.state.userInput)}>
           Add
