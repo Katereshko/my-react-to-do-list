@@ -41,89 +41,21 @@ Right after that you can use the tool again and create a new todo list.
 
 ## Logic side  
 
-The main logic is described in the ToDoList.js file (ToDoList component).  ```````
-
-
-Мы можем скомбинировать оба подхода и сделать состояние React-компонента «единственным источником правды». Тогда React-компонент будет рендерить форму и контролировать её поведение в ответ на пользовательский ввод. Значение элемента формы input в этом случае будет контролировать React, а сам элемент будет называться «управляемый компонент».``````
-Мы установили атрибут value для поля ввода и теперь в нём всегда будет отображаться значение this.state.value. Состояние React-компонента стало «источником истины». А так как каждое нажатие клавиши вызывает handleChange, который обновляет состояние React-компонента, значение в поле будет обновляться по мере того, как пользователь печатает.
+The main logic is described in the ToDoList.js file (ToDoList component).  
 
 A class component is created and the initial state is set: **userInput** and **toDoList** values are empty.  
-The render() function renders HTML to the web page. The todo list is rendered as a <form> element, and the future todo list items are going to be displayed as <li> elements of a <ul> list. As the value attribute makes the input value equal to the current state's **userInput** value (this.state.userInput), it also becomes equal to the currently entered value.  
+The render() function renders HTML to the web page. The todo list is rendered as a <form> element, and the future todo list items are going to be displayed as <li> elements of a <ul> list.
 
-When the user types anything in the input field, the _onChange_ event handler gets triggered, which leads to the call of **addNewText()**. The **setState()** is called then and the **userInput** value changes to the value that is currently entered by the user. 
+In this case we deal with a controlled component. The React component's state defines the input value, which means that the component renders the form in response to the user's input. The value attribute is set for input, so _this.state.userInput_  will be always displayed in the input field.  
+
+When the user types anything in the input field, the _onChange_ event handler gets triggered, which leads to the call of **addNewText()**. The **setState()** is called then and the **userInput** value changes to the value that is currently entered by the user. So every time the user types anything in the input field, **addNewText()** is called which updates the component's state, and the value in the input field also updates as the user is typing.  
 
 When the "Add" button/Enter key is clicked, the _onClick_ event handler gets triggered, which leads to the call of **addItem()**.  
-It creates the **toDoArray** array, which is equal to the current state's **toDoList** array (and is initially empty).  
-The input's value is pushed to this new array, and the state is renewed using _setState()_ method. So the value of **toDoList** array gets equal to the latest value of **toDoArray* which contains the pushed input value already. Then the page is rendered with the new state and the new element of the array are shown on the page as one of the listed elements.  
+It creates the **toDoArray** array, which works with the current state's **toDoList** array (and is initially empty).  
+The input's value is pushed to this new array, and then the state is updated using _setState()_ method. So the value of **toDoList** array gets equal to the latest value of **toDoArray* which contains the pushed input value already. Then the page is rendered again using the latest state and the _map()_ method, as the result the new element of the array is displayed on the page as one of the listed (<li>) elements.
 
 The _onSubmit()_ event handler attached to the form submission event comes into operation when the form is submitted, i.e. the user clicks Enter key or "Add" button, and the page is not being reloaded due to preventDefault() method.  
 
+Every <li> element also has an _onClick_ event handler which  allows to assign _.crossed_ class to this element or to withdraw it by one click (**crossedWord()** id called), as a result the item displays as crossed and vice versa.  
 
-export class ToDoList extends Component{
-  constructor(){
-    super();
-    this.state = {
-      userInput: "", //значение input пока пустое
-      toDoList: [] //массив дел пока пустой
-    }
-  }
-
-  addNewTask(e){
-    this.setState({userInput: e});
-    console.log(e)
-  }
-
-  addItem(input){
-    if (input === ''){
-      alert('please enter text');
-    } else{
-    //по первому нажатию на кнопку создается массив, его раньше не было
-    let toDoArray = this.state.toDoList;
-    toDoArray.push(input);
-    this.setState({toDoList: toDoArray, userInput: ""});
-    //чтобы видеть в консоли, как выглядит сейчас массив-дублер
-    console.log(toDoArray);
-    }
-  }
-
-  crossedWord(event){
-    const listElement = event.target;
-    listElement.classList.toggle('crossed');
-  }
-
-  deleteItem(){
-    let toDoArray = this.state.toDoList;
-    //точно так же как в addItem в начале
-    //только там мы следующим децтсвием добавляем элемент в массив, а здесь мы будем массив опустошать:
-    toDoArray = [];
-    this.setState({toDoList: toDoArray})
-  }
-
-  onFormSubmit(e){
-    e.preventDefault();
-  }
-
-  render(){
-    return(
-      <div className="form_wrapper">
-      <form onSubmit = {this.onFormSubmit}> 
-        <input type="text" placeholder="to do next" 
-        value = {this.state.userInput}
-        onChange = {(e) => {this.addNewTask(e.target.value)}}//берет value  из input field, а оно прямо сейчас равно userInput
-        />
-        <button onClick={() => this.addItem(this.state.userInput)}>
-          Add
-        </button>
-        <ul>
-          {this.state.toDoList.map ( (item, index) => (<li onClick={this.crossedWord} key={index}>{item}</li>)
-          )}
-        </ul>
-        <button onClick={() => this.deleteItem()}>
-          Delete
-        </button>
-      </form>
-      </div>
-    )
-  }
-}
-
+Finally, the "Delete" button allows to delete the whole list (to empty the relevant array). When the "Delete" button is clicked, the _onClick_ event handler gets triggered, which leads to the call of **deleteItem()**. It updates the **listArray** with the current state's **griceryList**, then empties the **listArray** and updates the state using _setState() and making the **groceryList** equal to the **arrayList**, so it also gets empty and the page is rendered again without the list on it.
