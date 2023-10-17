@@ -58,4 +58,9 @@ The _onSubmit()_ event handler attached to the form submission event comes into 
 
 Every <li> element also has an _onClick_ event handler which  allows to assign _.crossed_ class to this element or to withdraw it by one click (**crossedWord()** id called), as a result the item displays as crossed and vice versa.  
 
-Finally, the "Delete" button allows to delete the whole list (to empty the relevant array). When the "Delete" button is clicked, the _onClick_ event handler gets triggered, which leads to the call of **deleteItem()**. It updates the **listArray** with the current state's **griceryList**, then empties the **listArray** and updates the state using _setState() and making the **groceryList** equal to the **arrayList**, so it also gets empty and the page is rendered again without the list on it.
+Finally, the "Delete" button allows to delete the whole list (to empty the relevant array). When the "Delete" button is clicked, the _onClick_ event handler gets triggered, which leads to the call of **deleteItem()**. It updates the **listArray** with the current state's **griceryList**, then empties the **listArray** and updates the state using _setState() and making the **groceryList** equal to the **arrayList**, so it also gets empty and the page is rendered again without the list on it.  
+
+**Thanks for your time exploring my project!**
+
+**EKATERINA TERESHKO
+ekaterina.tereshko.me@gmail.com**
