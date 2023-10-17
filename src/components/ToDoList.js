@@ -9,9 +9,9 @@ export class ToDoList extends Component{
     }
   }
 
-  addNewTask(e){
+  addNewText(e){
     this.setState({userInput: e});
-    console.log(e)
+    console.log(e);
   }
 
   addItem(input){
@@ -50,14 +50,15 @@ export class ToDoList extends Component{
       <form onSubmit = {this.onFormSubmit}> 
         <input type="text" placeholder="to do next" 
         value = {this.state.userInput}
-        onChange = {(e) => {this.addNewTask(e.target.value)}}
+        onChange = {(e) => {this.addNewText(e.target.value)}}
         />
         <button onClick={() => this.addItem(this.state.userInput)}>
           Add
         </button>
         <ul>
-          {this.state.toDoList.map ( (item, index) => (<li onClick={this.crossedWord} key={index}>{item}</li>)
-          )}
+          {this.state.toDoList.map ( (item, index) => (
+          <li onClick={this.crossedWord} key={index}>{item}</li>
+          ))}
         </ul>
         <button onClick={() => this.deleteItem()}>
           Delete
