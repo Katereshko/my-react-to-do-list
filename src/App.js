@@ -6,7 +6,7 @@ import { Pictures } from './components/Pictures';
 
 function App() {
   return (
-    <div>
+    <div className="main">
       <Header/>
       <Pictures/>
       <ToDoList/>

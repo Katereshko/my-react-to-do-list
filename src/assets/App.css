@@ -1,3 +1,10 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  overflow-x: hidden;
+}
+
 .crossed{
   text-decoration: line-through;
   text-decoration-color: #4D2DB7;
